@@ -24,7 +24,7 @@ def main():
     subprocess.check_call(gclientSync)
     progress.printSpendingTime()
 
-    generateProjectStr = "python wow_project.py"
+    generateProjectStr = "python wow_project_gen.py"
     generateProject = generateProjectStr.split()
     progress = PrintProgress("Generate project")
     subprocess.check_call(generateProject)
