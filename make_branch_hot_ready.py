@@ -4,6 +4,7 @@
 import subprocess
 import time
 from datetime import datetime
+import os
 
 class PrintProgress():
     def __init__(self, taskName):
@@ -19,9 +20,8 @@ class PrintProgress():
 
 def main():
     gclientSynStr = "gclient sync --with_branch_heads -j 1 --nohooks --reset"
-    gclientSync = gclientSynStr.split()
     progress = PrintProgress("gclient sync")
-    subprocess.check_call(gclientSync)
+    os.system(gclientSynStr)
     progress.printSpendingTime()
 
     generateProjectStr = "python wow_project_gen.py"
